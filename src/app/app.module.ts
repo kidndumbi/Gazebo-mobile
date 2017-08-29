@@ -9,6 +9,10 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 //import { FirebaseService } from '../services/firebase.service';
+import { FirebaseService } from '../services/firebase/firebase.service';
+import { AuthService } from '../services/firebase/auth.service';
+import { ToastService } from '../services/toast.service';
+
 
 import { MyApp } from './app.component';
 import { ListPage } from '../pages/list/list';
@@ -37,7 +41,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    FirebaseService,
+    ToastService,
+    AuthService
   ]
 })
 export class AppModule {}
