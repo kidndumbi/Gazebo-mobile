@@ -1,8 +1,8 @@
- export const  firebaseConfig = {
-    apiKey: "AIzaSyDtYnXcBgdfPV-q13hJzO_ac_W6WOVVPBQ",
-    authDomain: "quizbooster.firebaseapp.com",
-    databaseURL: "https://quizbooster.firebaseio.com",
-    projectId: "quizbooster",
-    storageBucket: "quizbooster.appspot.com",
-    messagingSenderId: "1094613221385"
+  export const  firebaseConfig = {
+    apiKey: "AIzaSyA61SILc6CAkNOy9hMa3D8ztWpoErybHH0",
+    authDomain: "cassachat-e7fdc.firebaseapp.com",
+    databaseURL: "https://cassachat-e7fdc.firebaseio.com",
+    projectId: "cassachat-e7fdc",
+    storageBucket: "",
+    messagingSenderId: "784133086461"
   };

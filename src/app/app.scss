@@ -14,3 +14,42 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+$primary: #e74c3c;
+$secondary: #25b9bb;
+$navbar: #444444;
+
+//  .item.item-trns {
+// 	border-color: rgba(0, 0, 0, 0);
+// 	background-color: rgba(0, 0, 0, 0);
+// 	color: white; 
+// }
+
+//  .cas-page-bgd-primary {
+
+//           background-color: $primary; /* fallback for old browsers */
+//             background: -webkit-linear-gradient(to left, $primary, $secondary); /* Chrome 10-25, Safari 5.1-6 */
+//             background: linear-gradient(to left, $primary, $secondary);
+        
+//     }
+
+    .cas-btn-primary {
+        background-color: $primary;
+        
+    }
+
+    .cas-navbar {
+        background-color: $navbar;
+        color: white;
+    }
+
+    .cas-btn-secondary {
+        background-color: $secondary;
+        
+    }
+
+    .cas-btn--fill {
+        width: 100%;
+        
+    }
+

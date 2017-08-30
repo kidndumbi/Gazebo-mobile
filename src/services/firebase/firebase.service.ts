@@ -78,7 +78,7 @@ export class FirebaseService {
         return this.auth.getAuthenticatedUser()
         .map(user => user.uid)
         .mergeMap(authId => this.db.object(`/profiles/${authId}`) )
-        .take(1);
+        //.take(1);
 
     }
 
