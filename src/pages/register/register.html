@@ -42,7 +42,14 @@
     </ion-item>
     <ion-item *ngIf="gender.invalid && gender.touched" style="color:red;font-size:11px">Gender is Invalid. Required!</ion-item>
 
-    <button ion-button dark type="button" (click)="openModal()" block>Select Avatar</button>
+    <!-- <button ion-button dark type="button" (click)="openModal()" block>Select Avatar</button> -->
+    <ion-item  (click)="openModal()">
+      <ion-thumbnail item-start>
+        <img [src]="profileData.avatar">
+      </ion-thumbnail>
+      <h6>Click avatar to select</h6>
+    </ion-item>
+
     <button ion-button type="submit" block>Save</button>
   </form>
 

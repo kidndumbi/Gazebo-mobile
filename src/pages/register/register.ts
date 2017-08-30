@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, Modal } from 'ionic-angular';
 import { profile } from '../../models/profile.model';
 import { AuthService } from '../../services/firebase/auth.service';
 import { FirebaseService } from '../../services/firebase/firebase.service';
@@ -62,8 +62,14 @@ export class RegisterPage {
   }
 
   openModal() {
-
     
+    const myModal: Modal = this.modal.create('AvatarModalPage');
+     myModal.present();
+
+     myModal.onDidDismiss(data=>{
+        console.log(data);
+        this.profileData.avatar = data.src;
+     })
   }
 
   async register(){
