@@ -55,4 +55,10 @@ export class LoginPage {
     });
   }
 
+  navigatetoRegsiter(){
+       this.navCtrl.push('RegisterPage',{
+      item: "Slice!"
+    });
+  }
+
 }

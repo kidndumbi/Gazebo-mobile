@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="cas-navbar">
     <ion-title>register</ion-title>
   </ion-navbar>
 
@@ -14,5 +14,36 @@
 
 
 <ion-content padding>
+
+  <form (ngSubmit)="validateForm(registerForm)" #registerForm="ngForm">
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-input type="email" name="email" #email="ngModel" [(ngModel)]="userData.email" email required></ion-input>
+    </ion-item>
+    <ion-item *ngIf="email.invalid && email.touched" style="color:red;font-size:11px">Email address in Invalid!</ion-item>
+
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input type="password" minlength="6" name="password" #password="ngModel" [(ngModel)]="userData.password" required></ion-input>
+    </ion-item>
+    <ion-item *ngIf="password.invalid && password.touched" style="color:red;font-size:11px"> Password is Invalid. Enter atleast 6 characters!</ion-item>
+
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-input type="text" #nickname="ngModel" mdInput name="nickname" [(ngModel)]="profileData.nick_name" required></ion-input>
+    </ion-item>
+    <ion-item *ngIf="nickname.invalid && nickname.touched" style="color:red;font-size:11px">Nickname is Invalid. Required!</ion-item>
+
+    <ion-item>
+      <ion-label>Gender</ion-label>
+      <ion-select [(ngModel)]="profileData.gender" #gender name="gender" required>
+        <ion-option [value]="g.value" *ngFor="let g of genders">{{ g.viewValue }}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="gender.invalid && gender.touched" style="color:red;font-size:11px">Gender is Invalid. Required!</ion-item>
+
+    <button ion-button dark type="button" (click)="openModal()" block>Select Avatar</button>
+    <button ion-button type="submit" block>Save</button>
+  </form>
 
 </ion-content>
