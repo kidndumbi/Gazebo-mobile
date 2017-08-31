@@ -30,17 +30,16 @@ export class LoginPage {
 
   async login(ngForm: HTMLFormElement){
 
-    console.log(ngForm);
+  
+     try{
+          const result = await this.auth.login(this.loginData.email, this.loginData.password)
+          console.log(result);
+          this.toast.createToast('Login successfull').present()
+          this.navigateToHome();
 
-    //  try{
-    //       const result = await this.auth.login(this.loginData.email, this.loginData.password)
-    //       console.log(result);
-    //       this.toast.createToast('Login successfull').present()
-    //       this.navigateToHome();
-
-    //  }catch(e){
-    //     this.toast.createToast(e.message).present()
-    //  }
+     }catch(e){
+        this.toast.createToast(e.message).present()
+     }
 
   }
 

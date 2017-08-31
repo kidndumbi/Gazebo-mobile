@@ -50,7 +50,7 @@
       <h6>Click avatar to change</h6>
     </ion-item>
 
-    <button ion-button type="submit" block>Save</button>
+    <button ion-button type="submit" [disabled]="registerForm.invalid" block>Save</button>
   </form>
 
 </ion-content>

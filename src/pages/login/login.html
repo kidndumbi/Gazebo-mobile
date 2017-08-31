@@ -20,20 +20,18 @@
       <ion-label floating>Email</ion-label>
       <ion-input type="email" name="email" #email="ngModel" [(ngModel)]="loginData.email" email required></ion-input>
     </ion-item>
-    <ion-item *ngIf="email.invalid && email.touched" style="color:red;font-size:11px">Email address in Invalid!</ion-item>
 
     <ion-item>
       <ion-label floating>Password</ion-label>
       <ion-input type="password" minlength="6" name="password" #password="ngModel" [(ngModel)]="loginData.password" required></ion-input>
     </ion-item>
-    <ion-item *ngIf="password.invalid && password.touched" style="color:red;font-size:11px"> Password is Invalid. Enter atleast 6 characters!</ion-item>
-   
+
     <ion-row>
          <ion-col>
                <button type="submit"  class="cas-btn-primary cas-btn--fill" ion-button >Login</button> 
          </ion-col>
            <ion-col>
-                <button class="cas-btn-secondary cas-btn--fill" (click)="navigatetoRegsiter()"  ion-button >Register</button> 
+                <button [disabled]="password.invalid" class="cas-btn-secondary cas-btn--fill" (click)="navigatetoRegsiter()"  ion-button >Register</button> 
          </ion-col>
 
       </ion-row>
