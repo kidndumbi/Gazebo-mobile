@@ -69,7 +69,9 @@ export class RegisterPage {
      myModal.onDidDismiss(data=>{
         console.log(data);
         this.profileData.avatar = data.src;
-     })
+     });
+
+     
   }
 
   async register(){
